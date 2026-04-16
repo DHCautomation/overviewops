@@ -3,269 +3,364 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Overview — Property Intelligence Platform</title>
-<meta name="description" content="Overview is the AI-powered property intelligence platform that watches every building in your portfolio 24/7, finds problems before your tenants feel them, and gives you complete control from one place.">
+<title>Overview — Your Buildings Run Themselves</title>
+<meta name="description" content="Overview is the AI-powered building operations platform that watches every building in your portfolio 24/7, catches problems before tenants feel them, and runs your entire operation automatically.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --white: #ffffff;
-    --off-white: #fafaf8;
-    --surface: #f1f5f9;
-    --dark: #0d1117;
-    --navy: #1e293b;
-    --mid: #475569;
-    --light: #94a3b8;
-    --border: #e2e8f0;
-    --accent: #059669;
-    --accent-light: #d1fae5;
-    --accent-dark: #047857;
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body: 'DM Sans', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--font-body); background: var(--white); color: var(--navy); line-height: 1.6; overflow-x: hidden; }
+:root {
+  --ink: #0a0d0f;
+  --ink-2: #1c2026;
+  --ink-3: #2d3540;
+  --mid: #4a5568;
+  --light: #8896a6;
+  --border: #e4e8ed;
+  --surface: #f7f8fa;
+  --white: #ffffff;
+  --green: #0a7c5c;
+  --green-light: #e6f4f0;
+  --green-mid: #1a9c74;
+  --green-bright: #12b584;
+  --amber: #b45309;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--white); color: var(--ink); line-height: 1.6; overflow-x: hidden; }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 0 4rem; height: 68px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(255,255,255,0.94); backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-  .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-  .logo-mark { display: grid; grid-template-columns: repeat(3, 8px); gap: 4px; }
-  .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--dark); }
-  .logo-name { font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--dark); letter-spacing: 0.08em; text-transform: uppercase; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-  .nav-links a { color: var(--mid); text-decoration: none; font-size: 0.88rem; font-weight: 400; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--dark); }
-  .nav-cta { padding: 0.55rem 1.4rem !important; background: var(--dark); color: white !important; border-radius: 8px; font-weight: 500 !important; transition: all 0.2s !important; }
-  .nav-cta:hover { background: var(--accent) !important; transform: translateY(-1px); }
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 4rem; height: 66px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.logo-mark { display: grid; grid-template-columns: repeat(3, 7px); gap: 3.5px; }
+.logo-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }
+.logo-name { font-family: var(--font-body); font-size: 0.95rem; font-weight: 500; color: var(--ink); letter-spacing: 0.1em; text-transform: uppercase; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+.nav-links a { color: var(--mid); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { padding: 0.55rem 1.4rem !important; background: var(--ink) !important; color: white !important; border-radius: 8px; font-weight: 500 !important; transition: all 0.2s !important; }
+.nav-cta:hover { background: var(--green) !important; transform: translateY(-1px); }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh; display: flex; flex-direction: column;
-    justify-content: center; align-items: center; text-align: center;
-    padding: 8rem 2rem 6rem; background: var(--white); position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; inset: 0;
-    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size: 60px 60px; opacity: 0.35; pointer-events: none;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.4rem 1rem; background: var(--accent-light);
-    border: 1px solid rgba(5,150,105,0.2); border-radius: 50px;
-    font-size: 0.78rem; font-weight: 500; color: var(--accent-dark);
-    margin-bottom: 2.5rem; animation: fadeUp 0.8s ease-out both;
-    font-family: var(--font-mono); letter-spacing: 0.03em;
-  }
-  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-  h1 {
-    font-family: var(--font-display); font-size: clamp(3.5rem, 8vw, 6.5rem);
-    font-weight: 700; color: var(--dark); line-height: 1.05;
-    letter-spacing: -0.02em; margin-bottom: 1.75rem; max-width: 900px;
-    animation: fadeUp 0.8s ease-out 0.1s both;
-  }
-  h1 em { font-style: italic; color: var(--accent); }
-  .hero-sub {
-    font-size: 1.2rem; color: var(--mid); max-width: 620px;
-    line-height: 1.8; margin-bottom: 3rem;
-    animation: fadeUp 0.8s ease-out 0.2s both; font-weight: 300;
-  }
-  .hero-actions { display: flex; gap: 1rem; animation: fadeUp 0.8s ease-out 0.3s both; margin-bottom: 5rem; }
-  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  padding: 8rem 2rem 5rem; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px; opacity: 0.4; pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(10,124,92,0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 1rem; background: var(--green-light);
+  border: 1px solid rgba(10,124,92,0.2); border-radius: 50px;
+  font-size: 0.76rem; font-weight: 500; color: var(--green);
+  margin-bottom: 2.5rem; animation: fadeUp 0.8s ease-out both;
+  font-family: var(--font-mono); letter-spacing: 0.04em; position: relative; z-index: 1;
+}
+.hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--green-bright); border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+@keyframes pulse { 0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(18,181,132,0.4); } 50% { opacity:0.6; box-shadow: 0 0 0 6px rgba(18,181,132,0); } }
+h1 {
+  font-family: var(--font-display); font-size: clamp(3.8rem, 9vw, 7.5rem);
+  font-weight: 700; color: var(--ink); line-height: 1.0;
+  letter-spacing: -0.03em; margin-bottom: 2rem; max-width: 1000px;
+  animation: fadeUp 0.8s ease-out 0.1s both; position: relative; z-index: 1;
+}
+h1 em { font-style: italic; color: var(--green); }
+.hero-sub {
+  font-size: 1.2rem; color: var(--mid); max-width: 620px; line-height: 1.85;
+  margin-bottom: 3rem; animation: fadeUp 0.8s ease-out 0.2s both; font-weight: 300; position: relative; z-index: 1;
+}
+.hero-actions { display: flex; gap: 1rem; animation: fadeUp 0.8s ease-out 0.3s both; margin-bottom: 4rem; position: relative; z-index: 1; flex-wrap: wrap; justify-content: center; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.95rem 2.5rem; background: var(--ink); color: white; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.25s; font-family: var(--font-body); }
+.btn-primary:hover { background: var(--green); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,124,92,0.25); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.95rem 2.5rem; background: transparent; color: var(--ink); border: 1.5px solid var(--border); border-radius: 10px; font-size: 0.95rem; font-weight: 400; cursor: pointer; text-decoration: none; transition: all 0.25s; font-family: var(--font-body); }
+.btn-ghost:hover { border-color: var(--ink); background: var(--surface); }
 
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.9rem 2.4rem; background: var(--dark); color: white;
-    border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 500;
-    cursor: pointer; text-decoration: none; transition: all 0.25s; font-family: var(--font-body);
-  }
-  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(5,150,105,0.25); }
-  .btn-ghost {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.9rem 2.4rem; background: transparent; color: var(--navy);
-    border: 1px solid var(--border); border-radius: 10px; font-size: 0.95rem;
-    font-weight: 400; cursor: pointer; text-decoration: none; transition: all 0.25s; font-family: var(--font-body);
-  }
-  .btn-ghost:hover { border-color: var(--navy); background: var(--surface); }
+.trust-bar { background: var(--ink); padding: 1.5rem 4rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 0.6rem; }
+.trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-bright); flex-shrink: 0; }
+.trust-text { font-size: 0.82rem; color: rgba(255,255,255,0.6); font-family: var(--font-mono); letter-spacing: 0.03em; }
+.trust-div { width: 1px; height: 18px; background: rgba(255,255,255,0.1); }
 
-  /* STATS */
-  .stats-bar { background: var(--dark); padding: 2.5rem 4rem; display: flex; justify-content: center; gap: 5rem; flex-wrap: wrap; }
-  .stat { text-align: center; }
-  .stat-num { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: white; line-height: 1; margin-bottom: 0.4rem; }
-  .stat-num span { color: var(--accent); }
-  .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); font-weight: 400; letter-spacing: 0.04em; }
+.stats { background: var(--surface); padding: 4rem 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(5,1fr); gap: 2rem; }
+.stat { text-align: center; }
+.stat-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 0.4rem; }
+.stat-num span { color: var(--green); }
+.stat-label { font-size: 0.75rem; color: var(--light); letter-spacing: 0.04em; text-transform: uppercase; }
 
-  /* SHARED */
-  section { padding: 7rem 2rem; }
-  .container { max-width: 1100px; margin: 0 auto; }
-  .section-label { font-family: var(--font-mono); font-size: 0.73rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 1rem; }
-  .section-title { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 700; color: var(--dark); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.25rem; }
-  .section-title em { font-style: italic; color: var(--accent); }
-  .section-sub { color: var(--mid); font-size: 1.05rem; max-width: 560px; line-height: 1.8; font-weight: 300; margin-bottom: 3.5rem; }
-  .divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
+section { padding: 7rem 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--green); margin-bottom: 1rem; }
+.section-title { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1.08; margin-bottom: 1.25rem; }
+.section-title em { font-style: italic; color: var(--green); }
+.section-sub { color: var(--mid); font-size: 1.05rem; max-width: 580px; line-height: 1.85; font-weight: 300; margin-bottom: 3.5rem; }
+.divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
 
-  /* PROBLEM */
-  .problem { background: var(--off-white); text-align: center; }
-  .problem .section-sub { margin: 0 auto 3rem; max-width: 680px; font-size: 1.15rem; }
-  .problem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-  .problem-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 2rem; text-align: left; }
-  .problem-card .icon { font-size: 1.6rem; margin-bottom: 1rem; }
-  .problem-card h3 { font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 0.6rem; }
-  .problem-card p { font-size: 0.87rem; color: var(--mid); line-height: 1.75; font-weight: 300; }
+.problem { background: white; }
+.problem-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.problem-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.25rem; transition: all 0.3s; }
+.problem-card:hover { border-color: rgba(10,124,92,0.2); transform: translateY(-3px); }
+.problem-icon { font-size: 1.8rem; margin-bottom: 1.25rem; }
+.problem-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--ink); margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+.problem-card p { font-size: 0.875rem; color: var(--mid); line-height: 1.8; font-weight: 300; }
 
-  /* HOW */
-  .how { background: white; }
-  .tier-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
-  .tier-card { border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 2rem; transition: all 0.3s; }
-  .tier-card:hover { border-color: var(--accent); box-shadow: 0 8px 40px rgba(5,150,105,0.07); transform: translateY(-4px); }
-  .tier-badge { display: inline-flex; align-items: center; padding: 0.3rem 0.8rem; background: var(--accent-light); border-radius: 50px; font-size: 0.72rem; font-weight: 600; color: var(--accent-dark); margin-bottom: 1.5rem; font-family: var(--font-mono); letter-spacing: 0.05em; }
-  .tier-name { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
-  .tier-full { font-size: 0.76rem; color: var(--light); font-family: var(--font-mono); margin-bottom: 1.25rem; letter-spacing: 0.02em; }
-  .tier-desc { font-size: 0.88rem; color: var(--mid); line-height: 1.8; margin-bottom: 1.75rem; font-weight: 300; }
-  .tier-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-  .tier-features li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.84rem; color: var(--navy); }
-  .tier-features li::before { content: '→'; color: var(--accent); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+.never-forgets { background: var(--ink); padding: 6rem 2rem; text-align: center; position: relative; overflow: hidden; }
+.never-forgets::before { content: ''; position: absolute; top: -100px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(circle, rgba(18,181,132,0.08) 0%, transparent 65%); pointer-events: none; }
+.nf-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--green-bright); margin-bottom: 1rem; }
+.nf-title { font-family: var(--font-display); font-size: clamp(2.4rem,5vw,4rem); font-weight: 700; color: white; letter-spacing: -0.025em; line-height: 1.08; margin-bottom: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+.nf-title em { font-style: italic; color: var(--green-bright); }
+.nf-sub { color: rgba(255,255,255,0.45); font-size: 1.05rem; max-width: 620px; line-height: 1.85; font-weight: 300; margin: 0 auto 3rem; }
+.memory-card { max-width: 680px; margin: 0 auto; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2.5rem; text-align: left; position: relative; z-index: 1; }
+.memory-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.75rem; }
+.memory-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--green); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; color: white; flex-shrink: 0; }
+.memory-title { font-size: 0.85rem; font-weight: 500; color: white; }
+.memory-sub { font-size: 0.72rem; color: rgba(255,255,255,0.35); font-family: var(--font-mono); margin-top: 0.15rem; }
+.memory-entries { display: flex; flex-direction: column; gap: 1rem; }
+.memory-entry { background: rgba(255,255,255,0.03); border-left: 2px solid var(--green); border-radius: 0 8px 8px 0; padding: 0.875rem 1rem; }
+.memory-date { font-size: 0.68rem; color: var(--green-bright); font-family: var(--font-mono); margin-bottom: 0.3rem; letter-spacing: 0.04em; }
+.memory-text { font-size: 0.83rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
+.memory-text strong { color: white; font-weight: 500; }
 
-  /* FEATURES */
-  .features { background: var(--off-white); }
-  .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
-  .feature-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 2rem; transition: all 0.3s; }
-  .feature-card:hover { border-color: rgba(5,150,105,0.3); transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.05); }
-  .feature-icon { width: 42px; height: 42px; background: var(--accent-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: 1.25rem; }
-  .feature-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; }
-  .feature-card p { font-size: 0.85rem; color: var(--mid); line-height: 1.75; font-weight: 300; }
-  .soon-tag { display: inline-block; padding: 0.15rem 0.5rem; background: var(--surface); border-radius: 4px; font-size: 0.65rem; font-weight: 600; color: var(--light); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono); margin-left: 0.4rem; vertical-align: middle; }
+.how { background: var(--surface); }
+.tier-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+.tier-card { background: white; border: 1.5px solid var(--border); border-radius: 18px; padding: 2.5rem 2.25rem; transition: all 0.35s; position: relative; overflow: hidden; }
+.tier-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green); opacity: 0; transition: opacity 0.35s; }
+.tier-card:hover { border-color: rgba(10,124,92,0.25); transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.tier-card:hover::before { opacity: 1; }
+.tier-badge { display: inline-flex; padding: 0.3rem 0.8rem; background: var(--green-light); border-radius: 50px; font-size: 0.7rem; font-weight: 600; color: var(--green); margin-bottom: 1.5rem; font-family: var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.tier-name { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; letter-spacing: -0.02em; line-height: 1.1; }
+.tier-name em { font-style: italic; color: var(--green); }
+.tier-full { font-size: 0.72rem; color: var(--light); font-family: var(--font-mono); margin-bottom: 1.25rem; letter-spacing: 0.02em; }
+.tier-desc { font-size: 0.875rem; color: var(--mid); line-height: 1.85; margin-bottom: 1.75rem; font-weight: 300; }
+.tier-features { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+.tier-features li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.84rem; color: var(--ink-3); line-height: 1.5; }
+.tier-features li::before { content: '→'; color: var(--green); font-weight: 600; flex-shrink: 0; margin-top: 1px; font-size: 0.78rem; }
 
-  /* PLATFORMS */
-  .platforms { background: white; text-align: center; }
-  .platforms .section-sub { margin: 0 auto 3rem; }
-  .platform-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.9rem; max-width: 900px; margin: 0 auto; }
-  .platform-chip { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1.5rem; border: 1px solid var(--border); border-radius: 10px; font-size: 0.87rem; font-weight: 500; color: var(--navy); background: white; transition: all 0.2s; }
-  .platform-chip:hover { border-color: var(--accent); color: var(--accent-dark); transform: translateY(-2px); }
-  .p-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-  .p-dot.soon { background: #f59e0b; }
-  .p-soon { font-size: 0.62rem; font-weight: 600; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono); }
+.features { background: white; }
+.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+.feature-card { border: 1px solid var(--border); border-radius: 14px; padding: 2rem; transition: all 0.3s; }
+.feature-card:hover { border-color: rgba(10,124,92,0.25); transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.05); }
+.feature-icon { width: 44px; height: 44px; background: var(--green-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; margin-bottom: 1.25rem; }
+.feature-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+.feature-card p { font-size: 0.84rem; color: var(--mid); line-height: 1.8; font-weight: 300; }
 
-  /* PRICING */
-  .pricing { background: var(--dark); text-align: center; }
-  .pricing .section-label { color: var(--accent); }
-  .pricing .section-title { color: white; }
-  .pricing .section-sub { color: rgba(255,255,255,0.45); margin: 0 auto 4rem; }
-  .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-  .pricing-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 2.5rem 2rem; text-align: left; transition: all 0.3s; }
-  .pricing-card:hover { border-color: rgba(5,150,105,0.35); background: rgba(5,150,105,0.03); }
-  .pricing-card.featured { border-color: var(--accent); background: rgba(5,150,105,0.05); position: relative; }
-  .feat-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.8rem; border-radius: 50px; letter-spacing: 0.08em; text-transform: uppercase; font-family: var(--font-mono); white-space: nowrap; }
-  .plan-name { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-mono); margin-bottom: 1rem; }
-  .plan-price { font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: white; line-height: 1; margin-bottom: 0.3rem; }
-  .plan-price span { font-size: 1rem; font-weight: 400; color: rgba(255,255,255,0.35); font-family: var(--font-body); }
-  .plan-per { font-size: 0.8rem; color: rgba(255,255,255,0.35); margin-bottom: 1.75rem; }
-  .plan-div { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 1.75rem; }
-  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
-  .plan-features li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.84rem; color: rgba(255,255,255,0.65); }
-  .plan-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
-  .plan-btn { display: block; width: 100%; padding: 0.85rem; text-align: center; border-radius: 8px; font-size: 0.9rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; font-family: var(--font-body); border: 1px solid rgba(255,255,255,0.12); color: white; background: transparent; }
-  .plan-btn:hover { background: rgba(255,255,255,0.07); }
-  .plan-btn.primary { background: var(--accent); border-color: var(--accent); }
-  .plan-btn.primary:hover { background: var(--accent-dark); }
+.alerts { background: var(--surface); }
+.alert-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; }
+.alert-col { border-radius: 14px; padding: 2rem; }
+.alert-col.bad { background: #fef2f2; border: 1px solid #fecaca; }
+.alert-col.good { background: var(--green-light); border: 1px solid rgba(10,124,92,0.2); }
+.alert-col-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-family: var(--font-mono); margin-bottom: 1.25rem; }
+.alert-col.bad .alert-col-title { color: #dc2626; }
+.alert-col.good .alert-col-title { color: var(--green); }
+.alert-items { display: flex; flex-direction: column; gap: 0.65rem; }
+.alert-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.83rem; line-height: 1.5; }
+.bad-item { color: #7f1d1d; }
+.good-item { color: var(--ink-3); }
+.bad-item::before { content: '✗'; color: #dc2626; font-weight: 700; flex-shrink: 0; font-size: 0.75rem; margin-top: 1px; }
+.good-item::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; font-size: 0.75rem; margin-top: 1px; }
 
-  /* CTA */
-  .cta-section { background: white; text-align: center; padding: 8rem 2rem; }
-  .cta-section .section-sub { margin: 0 auto 3rem; }
+.voice-section { background: var(--ink); padding: 6rem 2rem; position: relative; overflow: hidden; }
+.voice-section::before { content: ''; position: absolute; bottom: -200px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(18,181,132,0.06) 0%, transparent 65%); pointer-events: none; }
+.voice-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.voice-label { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: var(--green-bright); margin-bottom: 1rem; }
+.voice-title { font-family: var(--font-display); font-size: clamp(2.2rem,4vw,3.4rem); font-weight: 700; color: white; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 1.5rem; }
+.voice-title em { font-style: italic; color: var(--green-bright); }
+.voice-sub { color: rgba(255,255,255,0.45); font-size: 1rem; line-height: 1.85; font-weight: 300; margin-bottom: 2.5rem; }
+.voice-features { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+.vf { display: flex; align-items: flex-start; gap: 0.875rem; }
+.vf-icon { width: 36px; height: 36px; background: rgba(18,181,132,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.vf-text h4 { font-size: 0.9rem; font-weight: 500; color: white; margin-bottom: 0.2rem; }
+.vf-text p { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.6; }
+.app-badges { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+.app-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.25rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; font-size: 0.82rem; color: rgba(255,255,255,0.65); font-family: var(--font-mono); letter-spacing: 0.03em; transition: all 0.2s; }
+.app-badge:hover { background: rgba(255,255,255,0.1); color: white; }
+.phone-frame { width: 260px; background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.1); border-radius: 36px; padding: 1.5rem; margin: 0 auto; }
+.phone-notch { width: 80px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin: 0 auto 1.25rem; }
+.phone-site-name { font-size: 0.65rem; color: rgba(255,255,255,0.35); font-family: var(--font-mono); letter-spacing: 0.06em; text-align: center; margin-bottom: 0.3rem; }
+.phone-score { font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--green-bright); line-height: 1; text-align: center; }
+.phone-score-label { font-size: 0.62rem; color: rgba(255,255,255,0.25); font-family: var(--font-mono); text-align: center; margin-bottom: 1rem; }
+.phone-chat { display: flex; flex-direction: column; gap: 0.5rem; }
+.pmsg { padding: 0.5rem 0.75rem; border-radius: 10px; font-size: 0.68rem; line-height: 1.45; max-width: 85%; }
+.pmsg.user { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65); align-self: flex-end; border-radius: 10px 10px 2px 10px; }
+.pmsg.vera { background: rgba(18,181,132,0.15); color: rgba(255,255,255,0.75); align-self: flex-start; border-radius: 10px 10px 10px 2px; }
+.phone-voice { margin-top: 0.875rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.6rem; background: var(--green); border-radius: 10px; font-size: 0.68rem; color: white; font-weight: 500; font-family: var(--font-mono); }
 
-  /* FOOTER */
-  footer { background: var(--off-white); border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-  .footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
-  .footer-logo-mark { display: grid; grid-template-columns: repeat(3,6px); gap: 3px; }
-  .footer-logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--light); }
-  .footer-logo-name { font-weight: 600; color: var(--navy); letter-spacing: 0.06em; font-size: 0.85rem; text-transform: uppercase; }
-  .footer-copy { font-size: 0.78rem; color: var(--light); }
-  .footer-copy a { color: var(--mid); text-decoration: none; }
-  .footer-right { display: flex; gap: 2rem; }
-  .footer-right a { font-size: 0.78rem; color: var(--mid); text-decoration: none; font-family: var(--font-mono); letter-spacing: 0.02em; transition: color 0.2s; }
-  .footer-right a:hover { color: var(--dark); }
+.platforms { background: white; text-align: center; }
+.platform-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.875rem; max-width: 900px; margin: 0 auto; }
+.platform-chip { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1.5rem; border: 1px solid var(--border); border-radius: 10px; font-size: 0.84rem; color: var(--ink-3); background: white; transition: all 0.2s; font-family: var(--font-mono); }
+.platform-chip:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
+.p-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-bright); flex-shrink: 0; }
+.p-dot.soon { background: var(--amber); }
+.p-soon { font-size: 0.6rem; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.08em; }
 
-  @media (max-width: 900px) {
-    nav { padding: 0 1.5rem; }
-    .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
-    .hero-actions { flex-direction: column; align-items: center; }
-    .stats-bar { gap: 2rem; padding: 2rem; }
-    .problem-grid, .tier-grid, .features-grid, .pricing-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; text-align: center; }
-  }
+.proof-section { background: var(--surface); }
+.proof-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.proof-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 2rem; }
+.proof-type { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green); font-family: var(--font-mono); margin-bottom: 1rem; }
+.proof-quote { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; font-style: italic; color: var(--ink); line-height: 1.65; margin-bottom: 1rem; }
+.proof-meta { font-size: 0.78rem; color: var(--light); }
+.proof-stat { text-align: center; padding: 2.5rem 2rem; display: flex; flex-direction: column; justify-content: center; }
+.proof-stat-num { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: var(--ink); line-height: 1; margin-bottom: 0.5rem; }
+.proof-stat-num span { color: var(--green); }
+.proof-stat-label { font-size: 0.85rem; color: var(--mid); line-height: 1.65; }
+
+.pricing-section { background: var(--ink); padding: 7rem 2rem; }
+.pricing-base { max-width: 760px; margin: 0 auto 3rem; background: rgba(18,181,132,0.06); border: 2px solid var(--green); border-radius: 18px; padding: 2.75rem; position: relative; }
+.pb-badge { position: absolute; top: -14px; left: 2.5rem; background: var(--green); color: white; font-size: 0.7rem; font-weight: 600; padding: 0.3rem 0.9rem; border-radius: 50px; font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.pb-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.75rem; }
+.pb-name { font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-mono); margin-bottom: 0.5rem; }
+.pb-price { font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: white; line-height: 1; }
+.pb-price span { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.35); font-family: var(--font-body); }
+.pb-note { font-size: 0.78rem; color: rgba(255,255,255,0.3); margin-top: 0.4rem; }
+.pb-features { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.6rem; }
+.pb-feature { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+.pb-feature::before { content: '✓'; color: var(--green-bright); font-weight: 700; flex-shrink: 0; font-size: 0.76rem; margin-top: 2px; }
+.pricing-tiers { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-bottom: 2rem; }
+.pt { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 2.25rem 2rem; transition: all 0.3s; position: relative; }
+.pt:hover { border-color: rgba(18,181,132,0.3); }
+.pt.featured { border-color: var(--green); background: rgba(18,181,132,0.05); }
+.pt-feat { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--green); color: white; font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.8rem; border-radius: 50px; font-family: var(--font-mono); white-space: nowrap; letter-spacing: 0.06em; }
+.pt-name { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-mono); margin-bottom: 0.75rem; }
+.pt-price { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: white; line-height: 1; margin-bottom: 0.2rem; }
+.pt-price span { font-size: 0.9rem; font-weight: 300; color: rgba(255,255,255,0.3); font-family: var(--font-body); }
+.pt-per { font-size: 0.73rem; color: rgba(255,255,255,0.28); margin-bottom: 0.5rem; }
+.pt-rep { font-size: 0.7rem; color: var(--green-bright); font-family: var(--font-mono); margin-bottom: 1.5rem; padding: 0.3rem 0.6rem; background: rgba(18,181,132,0.1); border-radius: 4px; display: inline-block; }
+.pt-div { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 1.5rem; }
+.pt-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem; }
+.pt-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+.pt-list li::before { content: '✓'; color: var(--green-bright); font-weight: 700; flex-shrink: 0; font-size: 0.73rem; margin-top: 2px; }
+.pt-btn { display: block; width: 100%; padding: 0.8rem; text-align: center; border-radius: 8px; font-size: 0.88rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; font-family: var(--font-body); border: 1px solid rgba(255,255,255,0.1); color: white; background: transparent; }
+.pt-btn:hover { background: rgba(255,255,255,0.07); }
+.pt-btn.primary { background: var(--green); border-color: var(--green); }
+.pt-btn.primary:hover { background: var(--green-mid); }
+.extras { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 2.5rem; }
+.extra { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.5rem; }
+.extra-name { font-size: 0.7rem; font-weight: 600; color: rgba(255,255,255,0.32); text-transform: uppercase; letter-spacing: 0.1em; font-family: var(--font-mono); margin-bottom: 0.5rem; }
+.extra-price { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: white; margin-bottom: 0.35rem; }
+.extra-price span { font-size: 0.85rem; color: rgba(255,255,255,0.28); font-family: var(--font-body); }
+.extra-desc { font-size: 0.8rem; color: rgba(255,255,255,0.38); line-height: 1.65; }
+.roi-bar { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.roi-side .roi-label { font-size: 0.73rem; color: rgba(255,255,255,0.32); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+.roi-side .roi-val { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; color: white; }
+.roi-side .roi-sub { font-size: 0.78rem; color: rgba(255,255,255,0.28); margin-top: 0.25rem; }
+.roi-side.old .roi-val { color: rgba(255,255,255,0.18); text-decoration: line-through; }
+.roi-vs { font-family: var(--font-display); font-size: 2rem; color: var(--green-bright); font-style: italic; }
+
+.cta-section { background: white; text-align: center; padding: 8rem 2rem; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 400px; background: radial-gradient(circle, rgba(10,124,92,0.04) 0%, transparent 65%); pointer-events: none; }
+.cta-email { font-family: var(--font-mono); font-size: 0.78rem; color: var(--light); margin-top: 1.5rem; }
+.cta-email a { color: var(--green); text-decoration: none; }
+
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-logo { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem; }
+.flm { display: grid; grid-template-columns: repeat(3,5px); gap: 3px; }
+.fld { width: 5px; height: 5px; border-radius: 50%; background: var(--light); }
+.footer-logo-name { font-weight: 500; color: var(--ink-3); letter-spacing: 0.08em; font-size: 0.82rem; text-transform: uppercase; }
+.footer-copy { font-size: 0.75rem; color: var(--light); }
+.footer-copy a { color: var(--mid); text-decoration: none; }
+.footer-right { display: flex; gap: 2rem; }
+.footer-right a { font-size: 0.75rem; color: var(--mid); text-decoration: none; font-family: var(--font-mono); transition: color 0.2s; }
+.footer-right a:hover { color: var(--ink); }
+
+@media (max-width: 960px) {
+  nav { padding: 0 1.5rem; }
+  .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
+  .stats-inner { grid-template-columns: repeat(3,1fr); }
+  .problem-grid,.tier-grid,.features-grid,.pricing-tiers,.proof-grid,.extras { grid-template-columns: 1fr; }
+  .voice-inner,.alert-compare { grid-template-columns: 1fr; }
+  .pb-features { grid-template-columns: 1fr; }
+  .trust-bar,.footer { padding: 1.5rem 2rem; }
+  .trust-div { display: none; }
+  footer { flex-direction: column; text-align: center; }
+  .hero-actions { flex-direction: column; align-items: center; }
+}
 </style>
 </head>
 <body>
 
 <nav>
   <a href="#" class="logo">
-    <div class="logo-mark">
-      <div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div>
-      <div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div>
-      <div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div>
-    </div>
+    <div class="logo-mark"><div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div><div class="logo-dot"></div></div>
     <span class="logo-name">Overview</span>
   </a>
   <ul class="nav-links">
     <li><a href="#how">How It Works</a></li>
     <li><a href="#features">Features</a></li>
-    <li><a href="#platforms">Platforms</a></li>
+    <li><a href="#voice">Voice & App</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="https://slatebas.com">SlateBAS ↗</a></li>
     <li><a href="mailto:info@overviewops.com" class="nav-cta">Get Access</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">Now Available — Powered by VERA</div>
-  <h1>Your buildings.<br><em>Always healthy.</em><br>Always handled.</h1>
-  <p class="hero-sub">Overview is the AI-powered property intelligence platform that watches every building in your portfolio 24/7, finds problems before your tenants feel them, and gives your entire team complete control from one place.</p>
+  <div class="hero-badge">Live — Monitoring Buildings Across Ottawa</div>
+  <h1>Your Buildings<br><em>Run Themselves.</em></h1>
+  <p class="hero-sub">Overview puts an AI operator in every building in your portfolio. She watches every system, every point, every minute — catches problems before your tenants feel them, and handles the rest so you don't have to.</p>
   <div class="hero-actions">
     <a href="mailto:info@overviewops.com" class="btn-primary">Request Early Access →</a>
     <a href="#how" class="btn-ghost">See How It Works</a>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stat"><div class="stat-num">15<span>min</span></div><div class="stat-label">Scan interval per site</div></div>
-  <div class="stat"><div class="stat-num">24<span>/7</span></div><div class="stat-label">Continuous monitoring</div></div>
-  <div class="stat"><div class="stat-num">100<span>%</span></div><div class="stat-label">Portfolio visibility</div></div>
-  <div class="stat"><div class="stat-num">&lt;5<span>min</span></div><div class="stat-label">Fault detection time</div></div>
-  <div class="stat"><div class="stat-num">0</div><div class="stat-label">Surprise tenant calls</div></div>
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Retirement homes</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Commercial offices</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Retail centres</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Multi-building portfolios</span></div>
+  <div class="trust-div"></div>
+  <div class="trust-item"><span class="trust-dot"></span><span class="trust-text">Live in Ottawa today</span></div>
 </div>
 
-<!-- PROBLEM -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">15<span>min</span></div><div class="stat-label">Max fault detection</div></div>
+    <div class="stat"><div class="stat-num">24<span>/7</span></div><div class="stat-label">Always watching</div></div>
+    <div class="stat"><div class="stat-num">0</div><div class="stat-label">Surprise tenant calls</div></div>
+    <div class="stat"><div class="stat-num">85<span>%</span></div><div class="stat-label">Less monitoring cost</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Building memory</div></div>
+  </div>
+</div>
+
 <section class="problem" id="problem">
   <div class="container">
     <div class="section-label">The Problem</div>
-    <h2 class="section-title">Your buildings are trying to tell you something.<br><em>Nobody is listening.</em></h2>
-    <p class="section-sub">The average property manager doesn't know their building has a problem until a tenant calls. By then it's already an emergency, already expensive, and already damaging your relationship.</p>
+    <h2 class="section-title">Your buildings are trying<br>to tell you something.<br><em>Nobody is listening.</em></h2>
+    <p class="section-sub" style="margin-bottom:3rem;">The average property manager finds out about a building problem when a tenant calls. By then it's already an emergency, already expensive, and already damaging the relationship you spent years building.</p>
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="icon">📞</div>
-        <h3>Reactive service is killing your margins</h3>
-        <p>Emergency calls cost 3–5x more than proactive maintenance. Every surprise fault is money you didn't need to spend and a relationship you had to repair.</p>
+        <div class="problem-icon">📞</div>
+        <h3>Reactive service kills margins</h3>
+        <p>Emergency calls cost 3–5× more than proactive maintenance. Every surprise fault is money you didn't need to spend and a client relationship you had to repair. Your NOC service calls you after the damage is done.</p>
       </div>
       <div class="problem-card">
-        <div class="icon">👤</div>
+        <div class="problem-icon">👤</div>
         <h3>The operator skills gap is getting worse</h3>
-        <p>Experienced operators are retiring. New staff can't diagnose a multi-system fault from trend data. The institutional knowledge is walking out the door every year.</p>
+        <p>Experienced operators are retiring. New staff can't diagnose a multi-system fault from trend data. Institutional knowledge walks out the door every time someone leaves — and it never comes back.</p>
       </div>
       <div class="problem-card">
-        <div class="icon">📊</div>
-        <h3>No real portfolio visibility</h3>
-        <p>You manage 10 buildings across 3 service providers with no single view of what needs attention today. You're making decisions with incomplete information every single day.</p>
+        <div class="problem-icon">🔔</div>
+        <h3>Alert fatigue kills your tools</h3>
+        <p>Your current system sends 47 alarms when one rooftop unit fails. Your team learns to ignore them. The one alarm that matters gets buried. This is how buildings fail and clients leave.</p>
       </div>
     </div>
   </div>
@@ -273,56 +368,87 @@
 
 <div class="divider"></div>
 
-<!-- HOW IT WORKS -->
+<section class="never-forgets" id="memory">
+  <div class="nf-label">The Overview Difference</div>
+  <h2 class="nf-title">When your facilities manager leaves,<br><em>VERA remembers everything.</em></h2>
+  <p class="nf-sub">Every fault, every fix, every equipment quirk, every preference — written to a permanent building memory. The next person who walks in gets briefed by VERA in minutes. Institutional knowledge that never retires, never calls in sick, and never forgets.</p>
+  <div class="memory-card">
+    <div class="memory-header">
+      <div class="memory-avatar">VERA</div>
+      <div>
+        <div class="memory-title">Glebe Center — Building Memory</div>
+        <div class="memory-sub">Updated continuously · Never deleted</div>
+      </div>
+    </div>
+    <div class="memory-entries">
+      <div class="memory-entry">
+        <div class="memory-date">APR 15 2026 — 06:14 — FAULT RESOLVED</div>
+        <div class="memory-text"><strong>AHU-1 belt replaced</strong> after discharge temp ran 8°F high for 3 hours. Same pattern as March 2025. Check belt first if this repeats — usually resolves within 20 min of replacement. Belt sourced from XYZ Supply, part #B-4471.</div>
+      </div>
+      <div class="memory-entry">
+        <div class="memory-date">MAR 02 2026 — BASELINE NOTE</div>
+        <div class="memory-text"><strong>AHU-1 always runs 2°F high</strong> due to aging coil — documented as normal for this unit. Do not alert on this reading. Coil replacement planned for fall 2026 maintenance.</div>
+      </div>
+      <div class="memory-entry">
+        <div class="memory-date">JAN 15 2026 — CONTACT PREFERENCE</div>
+        <div class="memory-text"><strong>Robert (Director):</strong> No alerts before 9am unless pipe freeze or life-safety risk. Wants plain English only — no technical point names, no BACnet references. One email max per incident.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="background:rgba(255,255,255,0.06);max-width:100%;"></div>
+
 <section class="how" id="how">
   <div class="container">
     <div class="section-label">How It Works</div>
     <h2 class="section-title">Three layers of<br><em>intelligent oversight.</em></h2>
-    <p class="section-sub">Overview puts an AI operator on every site, a portfolio agent for every client, and a fleet command layer for your operations team. Every layer talks to the ones above and below it — knowledge flows in both directions.</p>
+    <p class="section-sub">Overview puts an AI operator on every site, a portfolio agent for every client, and a fleet command layer for your operations team. Every layer learns. Every layer improves. Every layer talks to the ones above and below it.</p>
     <div class="tier-grid">
       <div class="tier-card">
         <div class="tier-badge">Per Site — Always On</div>
-        <div class="tier-name">VERA</div>
+        <div class="tier-name"><em>VERA</em></div>
         <div class="tier-full">Virtual Engineering & Response Assistant</div>
-        <p class="tier-desc">VERA lives on each building and acts as a virtual experienced operator. She onboards to a new site in under an hour, learns every piece of equipment and its normal operating range, and scans every point every 15 minutes — forever.</p>
+        <p class="tier-desc">VERA lives on each building and acts as a virtual experienced operator. She onboards in under an hour, learns every system, builds a custom rulebook for that specific building, and watches every point — forever. She gets smarter every single day she runs.</p>
         <ul class="tier-features">
-          <li>Onboards to any building — understands points automatically</li>
-          <li>Builds a rulebook of what normal looks like for that site</li>
-          <li>Maintains a site memory that grows smarter over time</li>
+          <li>Onboards to any building — understands points automatically regardless of vendor naming</li>
+          <li>Builds smart relative rules — not brittle static thresholds that break when setpoints change</li>
           <li>Catches faults before any human notices</li>
-          <li>Sends plain-language alerts to the right people</li>
-          <li>Calculates and reports a live 0–100 health score</li>
+          <li>Suppresses cascade alarms — one alert per incident, not one per point</li>
+          <li>Detects new equipment added to the building automatically</li>
+          <li>Nightly baseline drift detection — self-correcting rules</li>
+          <li>Weekly full site audit — gets smarter every week</li>
+          <li>Chat and voice interface — ask VERA anything, anytime</li>
           <li>Emails from vera@overviewops.com — feels like a real team member</li>
-          <li>Chat interface — ask VERA anything about the building</li>
         </ul>
       </div>
       <div class="tier-card">
         <div class="tier-badge">Per Client Portfolio</div>
-        <div class="tier-name">Portfolio Agent</div>
-        <div class="tier-full">One agent per multi-building client</div>
-        <p class="tier-desc">Clients with multiple buildings get their own dedicated portfolio agent. Their facilities director or ownership group asks plain-language questions and gets answers across their entire portfolio — without needing to understand BAS, BACnet, or any technical system.</p>
+        <div class="tier-name">Portfolio<br><em>Agent</em></div>
+        <div class="tier-full">One dedicated agent per multi-building client</div>
+        <p class="tier-desc">Clients with multiple buildings get their own dedicated AI agent. Their facilities director asks plain-language questions and gets answers across their entire portfolio — no BACnet knowledge required, no technical jargon, just clear answers.</p>
         <ul class="tier-features">
           <li>Knows every building in the client's portfolio</li>
           <li>Talks directly to each site's VERA for real answers</li>
-          <li>Generates executive portfolio reports on demand</li>
+          <li>Executive portfolio reporting on demand</li>
           <li>Board-ready health and performance summaries</li>
-          <li>Proactive briefings to ownership before they ask</li>
+          <li>Proactive ownership briefings before they ask</li>
           <li>Energy performance benchmarking across sites</li>
           <li>Can be branded and named for the client's company</li>
         </ul>
       </div>
       <div class="tier-card">
         <div class="tier-badge">Operations Fleet</div>
-        <div class="tier-name">Fleet Command</div>
-        <div class="tier-full">Your operations team's AI manager</div>
-        <p class="tier-desc">Your team gets a fleet-wide intelligence layer that reads every site, every health score, and every VERA memory — and helps you run your entire operation proactively. Know what needs attention before clients feel it. Dispatch the right tech to the right site. Draft client communications automatically.</p>
+        <div class="tier-name">Fleet<br><em>Command</em></div>
+        <div class="tier-full">Your team's AI operations manager</div>
+        <p class="tier-desc">Your operations team gets a fleet-wide intelligence layer that reads every site, every health score, and every VERA memory. Know what needs attention before clients feel it. Dispatch the right tech. Draft client communications automatically.</p>
         <ul class="tier-features">
-          <li>Real-time view across every client site</li>
-          <li>Proactive dispatch recommendations</li>
+          <li>Real-time view across every client site simultaneously</li>
+          <li>Proactive tech dispatch recommendations</li>
           <li>Fleet knowledge base — every fault makes every site smarter</li>
           <li>Drafts client communications and reports automatically</li>
           <li>Alerts your team before clients notice problems</li>
-          <li>Monthly portfolio reporting for any client in seconds</li>
+          <li>Full portfolio reporting for any client in seconds</li>
         </ul>
       </div>
     </div>
@@ -331,72 +457,60 @@
 
 <div class="divider"></div>
 
-<!-- FEATURES -->
 <section class="features" id="features">
   <div class="container">
     <div class="section-label">Platform Features</div>
     <h2 class="section-title">Replace five tools<br><em>with one platform.</em></h2>
-    <p class="section-sub">Overview replaces your NOC monitoring contract, your BAS service dashboards, your tenant ticketing system, your manual reporting process, and your reactive dispatch workflow — with one intelligent platform that actually understands buildings.</p>
+    <p class="section-sub" style="margin-bottom:3.5rem;">Overview replaces your NOC monitoring contract, your Angus work order system, your manual reporting process, your energy consultant, and your reactive dispatch workflow — with one intelligent platform that actually understands your buildings.</p>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🏥</div>
-        <h3>Live Health Scores</h3>
-        <p>Every site gets a real-time health score from 0–100%. Not based on connectivity — based on what VERA actually found when she checked every point. Click any score to open a live conversation with VERA about what's happening and why.</p>
+      <div class="feature-card"><div class="feature-icon">🏥</div><h3>Live Health Scores</h3><p>Every site gets a real-time health score from 0–100%. Not based on connectivity — based on what VERA actually checked. Click any score to open a live voice or text chat with VERA about exactly what's happening and why.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔍</div><h3>AI Fault Detection</h3><p>VERA uses smart relative rules — not brittle static thresholds. "Alert if zone temp exceeds setpoint by 3°C for 15 minutes." When the setpoint changes, the rule automatically updates. No reconfiguration ever needed.</p></div>
+      <div class="feature-card"><div class="feature-icon">🧠</div><h3>Permanent Site Memory</h3><p>Every fault, fix, and equipment quirk written to a permanent memory. VERA remembers the March belt failure when she sees the same pattern in October. Real institutional knowledge that never retires or walks out the door.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔕</div><h3>Zero Alert Fatigue</h3><p>When RTU-3 fails, VERA sends one alert — not 47. She knows the four VAVs it feeds will alarm and suppresses them automatically. Every alert VERA sends is worth reading. That's what makes your team trust her.</p></div>
+      <div class="feature-card"><div class="feature-icon">👥</div><h3>Smart Contact Rules</h3><p>Robert gets one plain-English email at 9am. Mike gets an immediate push notification. Safety emergencies override everything. VERA remembers every preference, every time, without ever being told twice.</p></div>
+      <div class="feature-card"><div class="feature-icon">📈</div><h3>Portfolio Intelligence</h3><p>Which of your 10 buildings needs attention this week? How did your portfolio perform vs last month? Overview answers all of this in seconds — with the context to act on it, not just the numbers.</p></div>
+      <div class="feature-card"><div class="feature-icon">🌐</div><h3>Fleet Knowledge Base</h3><p>Every fault VERA finds gets evaluated for fleet relevance. Failure signatures that precede common faults are shared across your entire fleet automatically. Every new site benefits from everything every other site has learned.</p></div>
+      <div class="feature-card"><div class="feature-icon">🎫</div><h3>Tenant Ticketing</h3><p>A full tenant work order and service request platform built into Overview. Tenants submit requests, VERA triages against live building data, your team is dispatched with full context already attached. No more Angus.</p></div>
+      <div class="feature-card"><div class="feature-icon">⚡</div><h3>Energy Intelligence</h3><p>VERA spots energy waste the same way she spots faults — by knowing what normal looks like. Automated reports, anomaly detection, and savings recommendations delivered to ownership automatically every month.</p></div>
+      <div class="feature-card"><div class="feature-icon">🔧</div><h3>Work Order Management</h3><p>Create, assign, and close work orders with full building context attached to every job. VERA knows what's wrong before the tech arrives. Every work order linked to the fault that created it and the equipment history.</p></div>
+      <div class="feature-card"><div class="feature-icon">🚗</div><h3>Tech Dispatch</h3><p>Smart dispatch recommendations based on proximity, equipment familiarity, fault severity, and site history. Send the right tech to the right site instead of whoever picks up the phone first.</p></div>
+      <div class="feature-card"><div class="feature-icon">📋</div><h3>Executive Reporting</h3><p>Board-ready monthly reports generated automatically for every client — building performance, fault history, energy trends, full service summary. A branded document your clients will actually read and value.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="alerts" id="alerts">
+  <div class="container">
+    <div class="section-label">Alert Intelligence</div>
+    <h2 class="section-title">Signal over noise.<br><em>Every single time.</em></h2>
+    <p class="section-sub" style="margin-bottom:3rem;">Alert fatigue is the death of every monitoring product. When your CEO gets 47 emails at 3am, Overview gets cancelled by 9am. VERA sends fewer alerts than anything you've used — and every one she sends is worth acting on.</p>
+    <div class="alert-compare">
+      <div class="alert-col bad">
+        <div class="alert-col-title">❌ Every other system</div>
+        <div class="alert-items">
+          <div class="alert-item bad-item">RTU-3 offline — 1 alarm</div>
+          <div class="alert-item bad-item">VAV-301 zone temp high — alarm</div>
+          <div class="alert-item bad-item">VAV-302 zone temp high — alarm</div>
+          <div class="alert-item bad-item">VAV-303 zone temp high — alarm</div>
+          <div class="alert-item bad-item">VAV-304 zone temp high — alarm</div>
+          <div class="alert-item bad-item">VAV-301 zone temp critical — alarm</div>
+          <div class="alert-item bad-item">VAV-302 zone temp critical — alarm</div>
+          <div class="alert-item bad-item">47 alarms. Team learns to ignore all of them.</div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔍</div>
-        <h3>AI Fault Detection</h3>
-        <p>VERA scans every device and point every 15 minutes and reasons about the data like an experienced operator — catching multi-system faults, anomalies, and failure precursors that rule-based threshold systems miss entirely.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🧠</div>
-        <h3>Site Memory</h3>
-        <p>Every fault, fix, and equipment quirk gets written to a per-site memory file. Next time VERA sees the same pattern, she says "this happened in March — the belt was worn, check it first." Real institutional knowledge that never walks out the door.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📬</div>
-        <h3>Proactive Alerts</h3>
-        <p>VERA emails the right people in plain language before anyone picks up the phone. Specific, actionable, and sent from vera@overviewops.com — your clients start treating her like a real member of your team who's always on the job.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">💬</div>
-        <h3>Chat With Your Buildings</h3>
-        <p>Every VERA and every portfolio agent has a full chat interface. Ask "why did the health score drop?" or "what's AHU-1 doing right now?" and get a real answer from an AI that knows that specific building's complete history.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📈</div>
-        <h3>Portfolio Intelligence</h3>
-        <p>Which of your 10 buildings needs attention this week? How did your portfolio perform this month? Which sites are candidates for a proactive client call? Overview answers every one of these questions in seconds with full context.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🌐</div>
-        <h3>Fleet Knowledge Base</h3>
-        <p>Every fault VERA finds gets evaluated for fleet-wide relevance. Equipment failure patterns, BACnet driver workarounds, and fault signatures that precede common failures — shared across your entire fleet so every new site benefits from day one.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎫</div>
-        <h3>Tenant Ticketing <span class="soon-tag">Coming</span></h3>
-        <p>A full tenant work order and service request platform built into Overview. Tenants submit requests, VERA triages them against live building data, and your team gets dispatched with full context already attached. No more Angus. No more disconnected systems.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔧</div>
-        <h3>Work Order Management <span class="soon-tag">Coming</span></h3>
-        <p>Create, assign, and close work orders with full building context attached to every job. VERA knows what's wrong before the tech arrives. Every work order is linked to the fault that created it and the history of that equipment.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Energy Intelligence <span class="soon-tag">Coming</span></h3>
-        <p>VERA spots energy waste the same way she spots faults — by knowing what normal consumption looks like. Automated energy reports, anomaly detection, and cost savings recommendations delivered to ownership automatically every month.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🚗</div>
-        <h3>Tech Dispatch Optimization <span class="soon-tag">Coming</span></h3>
-        <p>Tell Overview who's available and it recommends which tech should go where based on site proximity, equipment familiarity, fault severity, and history. Dispatch that actually makes sense instead of whoever answers first.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📋</div>
-        <h3>Executive Reporting <span class="soon-tag">Coming</span></h3>
-        <p>Board-ready monthly reports generated automatically for every client — building performance, fault history, energy trends, and full service summary — delivered as a branded PDF your clients will actually read and value.</p>
+      <div class="alert-col good">
+        <div class="alert-col-title">✅ VERA</div>
+        <div class="alert-items">
+          <div class="alert-item good-item">RTU-3 offline — one clear alert sent to Mike immediately</div>
+          <div class="alert-item good-item">VAVs 301–304 affected — suppressed, VERA monitors silently</div>
+          <div class="alert-item good-item">Day 2: One brief status update — temps stable, no action needed</div>
+          <div class="alert-item good-item">Day 4: One escalation — temps climbing, action recommended</div>
+          <div class="alert-item good-item">Safety override: Immediate alert if residents at risk</div>
+          <div class="alert-item good-item">4 meaningful alerts over a week. Every one acted on.</div>
+          <div class="alert-item good-item">Robert hears about it once, in plain English, at 9am.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -404,176 +518,227 @@
 
 <div class="divider"></div>
 
-<!-- PLATFORMS -->
+<section class="voice-section" id="voice">
+  <div class="voice-inner">
+    <div>
+      <div class="voice-label">Voice & Mobile</div>
+      <h2 class="voice-title">Talk to your<br>buildings from<br><em>anywhere.</em></h2>
+      <p class="voice-sub">VERA understands spoken questions and responds out loud. Check on a building from your car before a client meeting. Ask why a health score dropped. Get briefed on your portfolio over your morning coffee.</p>
+      <div class="voice-features">
+        <div class="vf"><div class="vf-icon">🎤</div><div class="vf-text"><h4>Voice in, voice out</h4><p>Speak naturally. VERA listens, understands building context, and responds clearly. No typing required.</p></div></div>
+        <div class="vf"><div class="vf-icon">📱</div><div class="vf-text"><h4>Native iOS and Android app</h4><p>Your entire portfolio in your pocket. Health scores, alerts, and VERA chat — always with you, always current.</p></div></div>
+        <div class="vf"><div class="vf-icon">🔔</div><div class="vf-text"><h4>Smart push notifications</h4><p>VERA taps you on the shoulder when something genuinely needs attention. Nothing else gets through to your phone.</p></div></div>
+        <div class="vf"><div class="vf-icon">🌐</div><div class="vf-text"><h4>Works over any BAS platform</h4><p>SlateBAS today. Tridium, Delta, JCI, Siemens and more coming. VERA never cares what vendor made the equipment.</p></div></div>
+      </div>
+      <div class="app-badges">
+        <div class="app-badge">⬇ App Store — iOS</div>
+        <div class="app-badge">⬇ Google Play — Android</div>
+        <div class="app-badge">🌐 Web App</div>
+      </div>
+    </div>
+    <div>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-site-name">GLEBE CENTER — RETIREMENT HOME</div>
+        <div class="phone-score">94%</div>
+        <div class="phone-score-label">BUILDING HEALTH — LIVE</div>
+        <div class="phone-chat">
+          <div class="pmsg user">Why did the score drop this morning?</div>
+          <div class="pmsg vera">AHU-1 discharge ran 4°F high for 20 min at 6am. Same pattern as the March belt issue. Mike has been notified and is on his way.</div>
+          <div class="pmsg user">Has this happened before?</div>
+          <div class="pmsg vera">Twice. March 14 — belt replaced. Jan 8 — tension adjusted. I'd recommend belt replacement this time based on the pattern.</div>
+        </div>
+        <div class="phone-voice">🎤 Hold to speak with VERA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="background:rgba(255,255,255,0.06);max-width:100%;"></div>
+
 <section class="platforms" id="platforms">
   <div class="container">
     <div class="section-label">Platform Support</div>
-    <h2 class="section-title">Works over <em>any</em> BAS platform.</h2>
-    <p class="section-sub" style="margin: 0 auto 3rem;">Overview is vendor-agnostic by design. VERA connects through a standardized data adapter — she never cares what BAS platform she's running on top of, only what the points are saying. Add new platforms without changing anything about how VERA works.</p>
+    <h2 class="section-title">Works over <em>any</em> BAS.</h2>
+    <p class="section-sub" style="margin: 0 auto 3rem;">Overview is vendor-agnostic by design. VERA reasons about building data regardless of what vendor named the points. Add new platforms without changing anything about how VERA works.</p>
     <div class="platform-grid">
-      <div class="platform-chip"><span class="p-dot"></span> SlateBAS — Available Now</div>
-      <div class="platform-chip"><span class="p-dot soon"></span> Tridium Niagara <span class="p-soon">Soon</span></div>
-      <div class="platform-chip"><span class="p-dot soon"></span> Delta Controls <span class="p-soon">Soon</span></div>
-      <div class="platform-chip"><span class="p-dot soon"></span> JCI Metasys <span class="p-soon">Soon</span></div>
-      <div class="platform-chip"><span class="p-dot soon"></span> Siemens Desigo CC <span class="p-soon">Soon</span></div>
-      <div class="platform-chip"><span class="p-dot soon"></span> Schneider EcoStruxure <span class="p-soon">Soon</span></div>
-      <div class="platform-chip"><span class="p-dot soon"></span> Distech Controls <span class="p-soon">Soon</span></div>
-      <div class="platform-chip"><span class="p-dot soon"></span> Automated Logic <span class="p-soon">Soon</span></div>
+      <div class="platform-chip"><span class="p-dot"></span>SlateBAS — Available Now</div>
+      <div class="platform-chip"><span class="p-dot soon"></span>Tridium Niagara <span class="p-soon">Soon</span></div>
+      <div class="platform-chip"><span class="p-dot soon"></span>Delta Controls <span class="p-soon">Soon</span></div>
+      <div class="platform-chip"><span class="p-dot soon"></span>JCI Metasys <span class="p-soon">Soon</span></div>
+      <div class="platform-chip"><span class="p-dot soon"></span>Siemens Desigo CC <span class="p-soon">Soon</span></div>
+      <div class="platform-chip"><span class="p-dot soon"></span>Schneider EcoStruxure <span class="p-soon">Soon</span></div>
+      <div class="platform-chip"><span class="p-dot soon"></span>Distech Controls <span class="p-soon">Soon</span></div>
+      <div class="platform-chip"><span class="p-dot soon"></span>Automated Logic <span class="p-soon">Soon</span></div>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- PRICING -->
-<section class="pricing" id="pricing">
+<section class="proof-section" id="proof">
   <div class="container">
-    <div class="section-label">Pricing</div>
-    <h2 class="section-title">Start with VERA.<br><em>Add what you need.</em></h2>
-    <p class="section-sub">One base subscription gets VERA on your site watching everything. Add modules as your operation grows. No long-term contracts. Cancel anytime. A fully loaded site still costs less than what you're paying Angus and your NOC contract combined.</p>
+    <div class="section-label">In The Field</div>
+    <h2 class="section-title">Built on real buildings.<br><em>Proven in Ottawa.</em></h2>
+    <p class="section-sub" style="margin-bottom:3rem;">Overview isn't a concept — it's running on real buildings right now. Retirement homes, commercial offices, and retail centres across Ottawa. Every fault caught. Every site memory growing. Every single day.</p>
+    <div class="proof-grid">
+      <div class="proof-card proof-stat">
+        <div class="proof-stat-num">3<span>am</span></div>
+        <div class="proof-stat-label">VERA caught an AHU fault before a single resident felt it. Tech dispatched. Fixed by 7am. The building owner never knew there was a problem.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-type">Retirement Home — Ottawa</div>
+        <div class="proof-quote">"The new building manager asked VERA what happened to a VAV on floor 3. VERA told her it had stuck twice before, described both times, and recommended actuator replacement. She'd only been on the job two weeks."</div>
+        <div class="proof-meta">Overview pilot — Glebe area, Ottawa</div>
+      </div>
+      <div class="proof-card proof-stat">
+        <div class="proof-stat-num">0</div>
+        <div class="proof-stat-label">Tenant complaints received at Overview pilot sites since monitoring began. Not because nothing went wrong — because VERA caught everything first.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- BASE CARD -->
-    <div style="max-width:700px; margin: 0 auto 3rem; background: rgba(5,150,105,0.06); border: 2px solid var(--accent); border-radius: 16px; padding: 2.5rem 2.5rem; position: relative;">
-      <div style="position:absolute; top:-14px; left:2.5rem; background: var(--accent); color: white; font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.9rem; border-radius: 50px; font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase;">Start Here — Required</div>
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.5rem;">
+<div class="divider"></div>
+
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-label" style="color:var(--green-bright);">Pricing</div>
+    <h2 class="section-title" style="color:white;">Start with VERA.<br><em>Add what you need.</em></h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.4);margin-bottom:3.5rem;">One base subscription gets VERA on your site watching everything. Add modules as your operation grows. Every tier costs less than what you're replacing — and does significantly more.</p>
+
+    <div class="pricing-base">
+      <div class="pb-badge">Start Here — Required Foundation</div>
+      <div class="pb-top">
         <div>
-          <div style="font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-mono); margin-bottom: 0.5rem;">VERA Core</div>
-          <div style="font-family: var(--font-display); font-size: 3.2rem; font-weight: 700; color: white; line-height: 1;">$75<span style="font-size:1rem; font-weight:400; color:rgba(255,255,255,0.4); font-family:var(--font-body);">/mo per site</span></div>
-          <div style="font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-top: 0.3rem;">The foundation — everything else builds on this</div>
+          <div class="pb-name">VERA Core Monitoring</div>
+          <div class="pb-price">$150<span>/mo per site</span></div>
+          <div class="pb-note">Replaces your NOC contract — which costs $200–500/mo and calls you after the damage is already done</div>
         </div>
-        <a href="mailto:info@overviewops.com" style="display:inline-flex; align-items:center; padding: 0.85rem 2rem; background: var(--accent); color: white; border-radius: 10px; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: all 0.2s; white-space: nowrap; font-family: var(--font-body);" onmouseover="this.style.background='#047857'" onmouseout="this.style.background='#059669'">Get Started →</a>
+        <a href="mailto:info@overviewops.com" style="display:inline-flex;align-items:center;padding:0.9rem 2rem;background:var(--green);color:white;border-radius:10px;font-size:0.9rem;font-weight:500;text-decoration:none;transition:background 0.2s;white-space:nowrap;font-family:var(--font-body);align-self:flex-start;" onmouseover="this.style.background='#0a7c5c'" onmouseout="this.style.background='#1a9c74'">Get Started →</a>
       </div>
-      <div style="height:1px; background: rgba(255,255,255,0.08); margin: 1.75rem 0;"></div>
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem;">
-        <div style="display:flex; gap:0.6rem; font-size:0.84rem; color:rgba(255,255,255,0.7);"><span style="color:var(--accent); font-weight:700; flex-shrink:0;">✓</span> VERA on-site AI operator</div>
-        <div style="display:flex; gap:0.6rem; font-size:0.84rem; color:rgba(255,255,255,0.7);"><span style="color:var(--accent); font-weight:700; flex-shrink:0;">✓</span> 15-minute fault detection scans</div>
-        <div style="display:flex; gap:0.6rem; font-size:0.84rem; color:rgba(255,255,255,0.7);"><span style="color:var(--accent); font-weight:700; flex-shrink:0;">✓</span> Live 0–100 health score per site</div>
-        <div style="display:flex; gap:0.6rem; font-size:0.84rem; color:rgba(255,255,255,0.7);"><span style="color:var(--accent); font-weight:700; flex-shrink:0;">✓</span> Proactive plain-language alerts</div>
-        <div style="display:flex; gap:0.6rem; font-size:0.84rem; color:rgba(255,255,255,0.7);"><span style="color:var(--accent); font-weight:700; flex-shrink:0;">✓</span> Site memory — learns over time</div>
-        <div style="display:flex; gap:0.6rem; font-size:0.84rem; color:rgba(255,255,255,0.7);"><span style="color:var(--accent); font-weight:700; flex-shrink:0;">✓</span> Daily digest and weekly reports</div>
-        <div style="display:flex; gap:0.6rem; font-size:0.84rem; color:rgba(255,255,255,0.7);"><span style="color:var(--accent); font-weight:700; flex-shrink:0;">✓</span> Fleet knowledge base access</div>
-        <div style="display:flex; gap:0.6rem; font-size:0.84rem; color:rgba(255,255,255,0.7);"><span style="color:var(--accent); font-weight:700; flex-shrink:0;">✓</span> VERA chat interface</div>
+      <div class="pb-features">
+        <div class="pb-feature">VERA on-site AI operator</div>
+        <div class="pb-feature">Smart fault detection with relative rules</div>
+        <div class="pb-feature">Live 0–100 health score per site</div>
+        <div class="pb-feature">Zero alert fatigue — one alert per incident</div>
+        <div class="pb-feature">Permanent site memory — learns forever</div>
+        <div class="pb-feature">Nightly drift detection + weekly full audit</div>
+        <div class="pb-feature">Smart contact rules per person</div>
+        <div class="pb-feature">Voice + chat interface with VERA</div>
+        <div class="pb-feature">Native iOS and Android app</div>
+        <div class="pb-feature">Push notifications</div>
+        <div class="pb-feature">Daily digest and weekly reports</div>
+        <div class="pb-feature">vera@overviewops.com email identity</div>
       </div>
     </div>
 
-    <!-- ADDON GRID -->
-    <div style="text-align:center; margin-bottom: 2rem;">
-      <div style="font-family: var(--font-mono); font-size: 0.73rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255,255,255,0.4);">Add-On Modules — Mix & Match</div>
-    </div>
-
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="plan-name">Portfolio Agent</div>
-        <div class="plan-price">+$25<span>/mo</span></div>
-        <div class="plan-per">per site</div>
-        <div class="plan-div"></div>
-        <ul class="plan-features">
+    <div class="pricing-tiers">
+      <div class="pt">
+        <div class="pt-name">Portfolio Agent</div>
+        <div class="pt-price">+$50<span>/mo</span></div>
+        <div class="pt-per">per site</div>
+        <div class="pt-rep">Replaces manual reporting</div>
+        <div class="pt-div"></div>
+        <ul class="pt-list">
           <li>Dedicated AI agent per client portfolio</li>
-          <li>Client portal — chat with their VERA</li>
+          <li>Client portal — chat with VERA directly</li>
           <li>Multi-building portfolio dashboard</li>
-          <li>Executive portfolio reporting</li>
+          <li>Executive reporting on demand</li>
           <li>Board-ready monthly summaries</li>
-          <li>Proactive ownership briefings</li>
-          <li>Can be branded per client</li>
+          <li>Can be branded per client company</li>
         </ul>
-        <a href="mailto:info@overviewops.com" class="plan-btn">Add This Module →</a>
+        <a href="mailto:info@overviewops.com" class="pt-btn">Add This →</a>
       </div>
-      <div class="pricing-card featured">
-        <div class="feat-badge">Replaces Angus</div>
-        <div class="plan-name">Tenant Ticketing</div>
-        <div class="plan-price">+$75<span>/mo</span></div>
-        <div class="plan-per">per site</div>
-        <div class="plan-div"></div>
-        <ul class="plan-features">
+      <div class="pt featured">
+        <div class="pt-feat">Replaces Angus</div>
+        <div class="pt-name">Tenant Operations</div>
+        <div class="pt-price">+$150<span>/mo</span></div>
+        <div class="pt-per">per site</div>
+        <div class="pt-rep">Replaces Angus ($100–300/mo)</div>
+        <div class="pt-div"></div>
+        <ul class="pt-list">
           <li>Full tenant service request portal</li>
           <li>VERA triages every ticket vs live data</li>
           <li>Work order creation and dispatch</li>
           <li>Tech assignment and tracking</li>
           <li>Tenant notifications and updates</li>
-          <li>Full request history per tenant</li>
-          <li>No more Angus — no more disconnected systems</li>
+          <li>Complete request history per tenant</li>
         </ul>
-        <a href="mailto:info@overviewops.com" class="plan-btn primary">Join Waitlist →</a>
+        <a href="mailto:info@overviewops.com" class="pt-btn primary">Join Waitlist →</a>
       </div>
-      <div class="pricing-card">
-        <div class="plan-name">Energy Intelligence</div>
-        <div class="plan-price">+$50<span>/mo</span></div>
-        <div class="plan-per">per site</div>
-        <div class="plan-div"></div>
-        <ul class="plan-features">
-          <li>VERA monitors energy like she monitors faults</li>
-          <li>Waste detection and anomaly alerts</li>
-          <li>HDD/CDD and weather-normalized reporting</li>
-          <li>Monthly energy summary to ownership</li>
-          <li>Cost savings recommendations</li>
-          <li>Benchmark sites against each other</li>
-          <li>Replaces your energy consultant</li>
+      <div class="pt">
+        <div class="pt-name">Energy Intelligence</div>
+        <div class="pt-price">+$100<span>/mo</span></div>
+        <div class="pt-per">per site</div>
+        <div class="pt-rep">Replaces energy consultant</div>
+        <div class="pt-div"></div>
+        <ul class="pt-list">
+          <li>Real-time energy anomaly detection</li>
+          <li>Weather-normalized consumption reports</li>
+          <li>Monthly cost savings summary</li>
+          <li>Actionable reduction recommendations</li>
+          <li>Cross-site energy benchmarking</li>
+          <li>Automated to ownership monthly</li>
         </ul>
-        <a href="mailto:info@overviewops.com" class="plan-btn">Join Waitlist →</a>
+        <a href="mailto:info@overviewops.com" class="pt-btn">Join Waitlist →</a>
       </div>
     </div>
 
-    <!-- EXTRA ADDONS ROW -->
-    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1rem;">
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.5rem;">
-        <div style="font-size:0.78rem; font-weight:600; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; font-family:var(--font-mono); margin-bottom:0.5rem;">Executive Reporting</div>
-        <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:white; margin-bottom:0.25rem;">+$30<span style="font-size:0.85rem; color:rgba(255,255,255,0.35); font-family:var(--font-body);">/mo</span></div>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); line-height:1.6;">Branded board-ready PDF reports generated automatically every month for every client.</div>
+    <div class="extras">
+      <div class="extra">
+        <div class="extra-name">Executive Reporting</div>
+        <div class="extra-price">+$75<span>/mo</span></div>
+        <div class="extra-desc">Branded board-ready PDF reports generated automatically every month for every client.</div>
       </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.5rem;">
-        <div style="font-size:0.78rem; font-weight:600; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; font-family:var(--font-mono); margin-bottom:0.5rem;">Tech Dispatch</div>
-        <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:white; margin-bottom:0.25rem;">+$25<span style="font-size:0.85rem; color:rgba(255,255,255,0.35); font-family:var(--font-body);">/mo</span></div>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); line-height:1.6;">Smart dispatch recommendations based on tech availability, proximity, and fault severity.</div>
+      <div class="extra">
+        <div class="extra-name">Tech Dispatch</div>
+        <div class="extra-price">+$50<span>/mo</span></div>
+        <div class="extra-desc">Smart dispatch recommendations based on proximity, equipment familiarity, and fault severity.</div>
       </div>
-      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.5rem;">
-        <div style="font-size:0.78rem; font-weight:600; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; font-family:var(--font-mono); margin-bottom:0.5rem;">White Label</div>
-        <div style="font-family:var(--font-display); font-size:1.8rem; font-weight:700; color:white; margin-bottom:0.25rem;">Custom</div>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); line-height:1.6;">Your brand, your agent names, your domain. Sell Overview as your own product to your clients.</div>
-      </div>
-    </div>
-
-    <!-- FULLY LOADED CALLOUT -->
-    <div style="margin-top: 2.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-      <div>
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.4); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:0.5rem;">Fully Loaded Site</div>
-        <div style="font-family:var(--font-display); font-size:2.4rem; font-weight:700; color:white; line-height:1;">$280<span style="font-size:1rem; font-weight:400; color:rgba(255,255,255,0.35); font-family:var(--font-body);">/mo per site</span></div>
-        <div style="font-size:0.85rem; color:rgba(255,255,255,0.4); margin-top:0.4rem;">VERA Core + Portfolio + Ticketing + Energy + Reporting + Dispatch</div>
-      </div>
-      <div style="text-align:right;">
-        <div style="font-size:0.8rem; color:rgba(255,255,255,0.35); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.4rem;">vs. what you pay today</div>
-        <div style="font-family:var(--font-display); font-size:2.4rem; font-weight:700; color:rgba(255,255,255,0.2); text-decoration: line-through; line-height:1;">$1,500+<span style="font-size:1rem; font-weight:400; font-family:var(--font-body);">/mo</span></div>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.3); margin-top:0.4rem;">Angus + NOC contract + energy reports</div>
+      <div class="extra">
+        <div class="extra-name">White Label</div>
+        <div class="extra-price">Custom</div>
+        <div class="extra-desc">Your brand, your agent names, your domain. Sell Overview as your own product to your clients.</div>
       </div>
     </div>
 
+    <div class="roi-bar">
+      <div class="roi-side">
+        <div class="roi-label">Overview — fully loaded</div>
+        <div class="roi-val" style="font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:white;">$575<span style="font-size:1rem;font-weight:300;color:rgba(255,255,255,0.3);font-family:var(--font-body);">/mo per site</span></div>
+        <div class="roi-sub">VERA + Portfolio + Ticketing + Energy + Reporting + Dispatch</div>
+      </div>
+      <div class="roi-vs">vs</div>
+      <div class="roi-side old">
+        <div class="roi-label">What you pay today</div>
+        <div class="roi-val" style="font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:rgba(255,255,255,0.18);text-decoration:line-through;">$1,000+<span style="font-size:1rem;font-weight:300;font-family:var(--font-body);">/mo</span></div>
+        <div class="roi-sub">NOC contract + Angus + energy reports + staff time handling all of it manually</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="container">
     <div class="section-label">Early Access</div>
-    <h2 class="section-title">Your competition is still<br>waiting for the <em>phone to ring.</em></h2>
-    <p class="section-sub" style="margin: 0 auto 3rem;">Overview is live and deployed on real buildings today. Get early access and put VERA to work on your portfolio before everyone else does. Built in Ottawa. Deployed everywhere.</p>
-    <a href="mailto:info@overviewops.com" class="btn-primary" style="font-size:1.05rem; padding: 1.1rem 3rem;">info@overviewops.com →</a>
+    <h2 class="section-title" style="max-width:700px;margin:0 auto 1.25rem;">Your competition is still<br>waiting for the <em>phone to ring.</em></h2>
+    <p class="section-sub" style="margin: 0 auto 3rem;">Overview is live and deployed on real buildings in Ottawa today. Get early access and put VERA to work on your portfolio before your competition does. Built in Ottawa. Deployed everywhere.</p>
+    <a href="mailto:info@overviewops.com" class="btn-primary" style="font-size:1rem;padding:1.1rem 3rem;">Request Early Access →</a>
+    <div class="cta-email">Questions? <a href="mailto:info@overviewops.com">info@overviewops.com</a></div>
   </div>
 </section>
 
 <footer>
   <div>
     <div class="footer-logo">
-      <div class="footer-logo-mark">
-        <div class="footer-logo-dot"></div><div class="footer-logo-dot"></div><div class="footer-logo-dot"></div>
-        <div class="footer-logo-dot"></div><div class="footer-logo-dot"></div><div class="footer-logo-dot"></div>
-        <div class="footer-logo-dot"></div><div class="footer-logo-dot"></div><div class="footer-logo-dot"></div>
-      </div>
+      <div class="flm"><div class="fld"></div><div class="fld"></div><div class="fld"></div><div class="fld"></div><div class="fld"></div><div class="fld"></div><div class="fld"></div><div class="fld"></div><div class="fld"></div></div>
       <span class="footer-logo-name">Overview</span>
     </div>
     <div class="footer-copy">© 2026 <a href="https://dhcautomation.ca">DHC Automation and Controls Ltd.</a> — Ottawa, Canada</div>
   </div>
   <div class="footer-right">
     <a href="https://slatebas.com">SlateBAS</a>
-    <a href="https://groundcontrol.dhcautomation.ca">Ground Control</a>
     <a href="mailto:info@overviewops.com">Contact</a>
   </div>
 </footer>
